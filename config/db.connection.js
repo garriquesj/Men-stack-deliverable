@@ -1,5 +1,6 @@
 // ---require mongoose---
 const mongoose =reqire ('mongoose');
+// ---make connection string a variable---
 const connectionStr = 'mongodb://localhost:27017/artspark';
 // ----data base will be called artspark----
 // ---connect to mongodb to mongoose using this path 'mongodb://localhost:27017/artspark'??----

@@ -1,9 +1,10 @@
-//install express,node, make gitignore
 // require node modules
 const express = require('express');
 //make the 'server'
 const app = express();
 const PORT = 1000;
+// ---import models---
+const artist =require ('.models/artist_model.js')
 // server.listen() method creates a listener on the specified 'port' or path.
 app.listen(PORT, () => console.log(`port is working ${PORT}`));
 // Configure the app (app.set)
@@ -23,12 +24,25 @@ app.get('/', function(req, res) {
 app.get('/', function(req, res) {
     res.send('<h1>indexPage</h1>');
   });
-// category
-app.get('/all art', function(req, res) {
+//index art
+app.get('/art', function(req, res) {
     res.send('<h1>all art Page</h1>');
   });
-// home
-app.get('/categories', function(req, res) {
+//index artists
+app.get('/artists', function(req, res) {
+    res.send('<h1>all artists Page</h1>');
+  });
+//   show route single pece of art aftert artist page
+app.get('/art', function(req, res) {
+    res.send('<h1>all art Page</h1>');
+  });
+//single artists and info and link to his/her art index
+app.get('/artist', function(req, res) {
+    res.send('<h1>all artists Page</h1>');
+  });
+
+// category index
+app.get('/artwork/:categories', function(req, res) {
     res.send('<h1>categoryPage</h1>');
   });
 // categoryid
