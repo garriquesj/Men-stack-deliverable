@@ -19,16 +19,21 @@ const artistSchema = new Schema({
     medium: {
         type: String, required: true 
     },
-    pieces: [{String}],
-    date_joined: {
-        type: Date, required: true
+    pieces: [{
+        String
+    }],
+    images: [{
+        String
+    }],
+    age: {
+        type: Date, required: true,min: '2002-01-1',//age minimum test
     },
     email: {
         type: String, required: true, unique: true 
     },
     numberOfPeices: {
-        type: Number, required: true
-    },
+        type: Number
+    }
 });
 // ---will automatically be stored in 'artist' collection. ----
 // ---set Artist variable to = model , now i can seed my artist data and it will be formatted this way----
