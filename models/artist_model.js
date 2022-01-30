@@ -20,7 +20,7 @@ const artistSchema = new Schema({
         type: String, required: true 
     },
     pieces: [{String}],
-    date: {
+    date_joined: {
         type: Date, required: true
     },
     email: {
