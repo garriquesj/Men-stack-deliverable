@@ -1,6 +1,6 @@
 // require node modules
 const express = require('express');
-//make the 'server'
+//make the 'express app'
 const app = express();
 const PORT = 1000;
 
@@ -10,6 +10,8 @@ const PORT = 1000;
 // server.listen() method creates a listener on the specified 'port' or path.
 app.listen(PORT, () => console.log(`port is working ${PORT}`));
 
+// Set our app-my app was working before I brought
+app.set('view engine', 'ejs');
 // Configure the app (app.set)
 // module.exports = new Collection(Artist, [
 //     {
@@ -51,8 +53,11 @@ app.listen(PORT, () => console.log(`port is working ${PORT}`));
 // module.exports = Artist;
 	
 // Mount middleware (app.use)
-	
-	
+app.use(express.urlencoded({ extended: false }));
+// app.use((req, res, next) => {    
+// 	console.log(`${req.method} ${req.originalUrl}`);    
+// 	next();
+app.use(express.static('public'))
 // Mount routes
 // The get method defines a route that listens for a GET request
 app.get('/', function(req, res) {
@@ -66,15 +71,16 @@ app.get('/', function(req, res) {
 //   });
 //index art
 app.get('/artwork', function(req, res) {
-    res.send("artwork",artwork.find());
+    res.render("art_index.ejs");
   });
+  //index artists
+app.get('/artists', function(req, res) {
+    res.render('artist_index.ejs');
   //   show route single piece of art aftert artist page
 app.get('/artwork/:artworkId', function(req, res) {
     res.send('<h1>all art Page</h1>');
   });
-//index artists
-app.get('/artists', function(req, res) {
-    res.send('<h1>all artists Page</h1>', artist.find());
+
   });
 //single artists and info and link to his/her art index
 app.get('/artist/artistId', function(req, res) {
@@ -98,7 +104,7 @@ app.get('/artistid', function(req, res) {
   });
 // create form
 app.get('/new', function(req, res) {
-    res.send('<h1>new form</h1>');
+    res.render('new_art_form.ejs');
   });
 // delete form
 app.get('/delete', function(req, res) {
@@ -107,6 +113,9 @@ app.get('/delete', function(req, res) {
 // sign up form
 app.get('/sign_up', function(req, res) {
     res.send('<h1>sign upPage</h1>');
+  });
+  app.get('/*', function(req, res) {
+    res.redirect('/');
   });
 // Tell the app to listen on port 4000
 
