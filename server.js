@@ -3,10 +3,13 @@ const express = require('express');
 //make the 'server'
 const app = express();
 const PORT = 1000;
+
+
 // ---import models---
 // const artist =require ('./models')
 // server.listen() method creates a listener on the specified 'port' or path.
 app.listen(PORT, () => console.log(`port is working ${PORT}`));
+
 // Configure the app (app.set)
 // module.exports = new Collection(Artist, [
 //     {
@@ -53,7 +56,7 @@ app.listen(PORT, () => console.log(`port is working ${PORT}`));
 // Mount routes
 // The get method defines a route that listens for a GET request
 app.get('/', function(req, res) {
-    res.send('<h1>Home Page</h1>');
+    res.render('home.ejs');
   });
 	
 
