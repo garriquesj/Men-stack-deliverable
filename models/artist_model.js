@@ -6,13 +6,13 @@
 // ---require mongoose---
 const mongoose = require("mongoose")
 //mongoose.schema is a constructor function for building Schemas
-// const Schema = mongoose.Schema; 
+const Schema = mongoose.Schema; 
 // maybe because its a constant in my artwork 
 //  use 
 // 
 
 // Schema: A Schema is a diagram or blueprint for what every object in the noSQL database will contain.
-const artistSchema = new mongoose.Schema({
+const artistSchema = new Schema({
     name: {
         type: String, required: true
     }, 

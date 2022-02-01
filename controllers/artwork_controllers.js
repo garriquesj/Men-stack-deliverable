@@ -5,8 +5,8 @@ const db = require('../models')
 
 
 
-db.Artwork.deleteMany({}, (error, DeletedItems) => {
-    console.log(DeletedItems);
+db.Artwork.deleteMany({}, (error, deletedArtwork) => {
+    console.log(deletedArtwork);
     db.Artwork.insertMany(
 // -------model--------
       [  
