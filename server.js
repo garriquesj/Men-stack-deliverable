@@ -1,6 +1,10 @@
 // require node modules
 const express = require('express');
 //make the 'express app'
+const controllers = require('./controllers/index.js')
+const dbConnections = require('./config/db.connection.js');
+const models = require('./models/artist_model.js');
+const methodOverride = require('method-override');
 const app = express();
 const PORT = 1000;
 
@@ -12,6 +16,10 @@ app.listen(PORT, () => console.log(`port is working ${PORT}`));
 
 // Set our app-my app was working before I brought
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static('public'));
+app.use(methodOverride('_method'));
+
 // Configure the app (app.set)
 // module.exports = new Collection(Artist, [
 //     {

@@ -48,7 +48,7 @@ const artWorkSchema = new Schema({
 //     date:  "Sep 20, 2021",
 //     image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc47194c-4389-40b2-b130-e3de76db4ea0/derco66-fe67779c-9587-4cfd-8dd3-3da5140cc0ea.png/v1/fill/w_1120,h_714,q_70,strp/liquor_store_by_eiskalterengel18_derco66-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODE2IiwicGF0aCI6IlwvZlwvYmM0NzE5NGMtNDM4OS00MGIyLWIxMzAtZTNkZTc2ZGI0ZWEwXC9kZXJjbzY2LWZlNjc3NzljLTk1ODctNGNmZC04ZGQzLTNkYTUxNDBjYzBlYS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.lPVi1z0rT8cyAUhbLsd8lcvFvgUKZTgtAFswiV9DQW8",
 //         }   
-{
+// {
 //     title: 'Modern Japan',  
 //     artist: 'EiskalterEngel18', 
 //     medium:'Digital Art',
@@ -104,7 +104,7 @@ const artWorkSchema = new Schema({
 //     date:  "Jul 16, 2021",
 //     image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/23a31251-40d3-4f1d-ae07-e8cf68c84f6f/denf2up-daadae16-15e2-46fa-883e-dd0648a92e5b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzIzYTMxMjUxLTQwZDMtNGYxZC1hZTA3LWU4Y2Y2OGM4NGY2ZlwvZGVuZjJ1cC1kYWFkYWUxNi0xNWUyLTQ2ZmEtODgzZS1kZDA2NDhhOTJlNWIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lIXOQYdMdhlMRPUq2h-ztCT_Nm1i8G_vSWgkUpXmfOk",
 //         }  
-    {
+    // {
 //     title: 'What the Staroste Saw',  
 //     artist: 'Tullusion', 
 //     medium:'Photography',

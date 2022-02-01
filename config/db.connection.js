@@ -1,5 +1,5 @@
 // ---require mongoose---
-const mongoose =reqire ('mongoose');
+const mongoose =require ('mongoose');
 // ---make connection string a variable---
 const connectionStr = 'mongodb://localhost:27017/artspark';
 // ----data base will be called artspark----
