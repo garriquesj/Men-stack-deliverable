@@ -3,13 +3,67 @@ const router = express.Router();
 const db = require('../models')
 
 
+router.get("/", (req, res) => {
+        db.find({}, (error,foundArt) => {
+        if (error) {
+            console.log(error);
+    } 
+        const context = {artwork:foundArt}//for ejs loop
+        res.render("art_index.ejs", context);
+    })
+    });
+
+router.post('/artwork', (req, res) => {
+    db.Artwork.create(req.body, (error, createdArt) => { 
+        if(error) console.log(error);
+        console.log(createdArt);
+        console.log(req.body)
+        res.redirect("/artwork");
+    })
+})
+
+router.get('/artwork/new', (req, res) => {
+res.render('new_art_form.ejs')
+})
+
+router.get('/:id', (req, res) => {
+    db.artwork.findById(req.params.id, (error, singleArt) => {
+    context = {artwork: singleArt } 
+    res.render('art_show.ejs', context);
+})
+});
+
+router.delete('/:id', (req, res) => {
+    db.artwork.findByIdAndDelete(req.params.id, (error, deletedArt) => {
+        if(error) {
+            res.send(error);
+        }
+
+        console.log(deletedArt);
+        res.redirect('/artwork')
+    })
+})
+
+router.get('/:id/edit', (req, res) => {
+ db.Artwork.findById(req.params.id, (error, editedArt) => { //needed to have record in the name in this variable???? makes no sense
+    if(error) console.log(error);
+
+    console.log(editedArt);
+    res.render('edit.ejs', { artwork: editedArt})
+    })
+})
+
+    
+router.get('/*', function(req, res) {
+    res.redirect('/');
+});
 
 
 db.Artwork.deleteMany({}, (error, deletedArtwork) => {
     console.log(deletedArtwork);
     db.Artwork.insertMany(
 // -------model--------
-      [  
+    [  
         {
         title: 'The IceBreaker',  
         artist: 'EiskalterEngel18', 
@@ -112,4 +166,5 @@ db.Artwork.deleteMany({}, (error, deletedArtwork) => {
         )
         console.log(deletedArtwork)
     }
-    )
+    );
+

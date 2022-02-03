@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 // 
 
 // Schema: A Schema is a diagram or blueprint for what every object in the noSQL database will contain.
-const artWorkSchema = new Schema({
+const artworkSchema = new Schema({
     title: {
         type: String, required: true
     }, 
@@ -22,8 +22,7 @@ const artWorkSchema = new Schema({
     },
     image: {
         type: String
-    },
-
+    }
 });
 
 // module.exports = new Collection(ArtWork [
@@ -122,6 +121,6 @@ const artWorkSchema = new Schema({
 // );
 // ---will automatically be stored in 'artWork' collection. ----
 // ---set ArtWorkvariable to = model , now i can seed my artist data and it will be formatted this way----
-const ArtWork = mongoose.model("ArtWork", artWorkSchema);
+const Artwork = mongoose.model("ArtWork", artworkSchema);
 // ---export model---
-module.exports = ArtWork;
+module.exports = Artwork;

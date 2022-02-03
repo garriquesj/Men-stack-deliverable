@@ -3,23 +3,26 @@ const express = require('express');
 //make the 'express app'
 const controllers = require('./controllers/index.js')
 const dbConnections = require('./config/db.connection.js');
-const models = require('./models/artist_model.js');
+const models = require('./models/artwork_model.js');
+// const models_artwork = require('./models/artwork_model.js');
 const methodOverride = require('method-override');
 const app = express();
+const router = express.Router();
 const PORT = 1000;
 
 
 // ---import models---
 // const artist =require ('./models')
 // server.listen() method creates a listener on the specified 'port' or path.
-app.listen(PORT, () => console.log(`port is working ${PORT}`));
+// app.listen(PORT, () => console.log(`port is working ${PORT}`));
 
 // Set our app-my app was working before I brought
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
-
+// app.use('/artwork', );
+app.listen(PORT, () => console.log(`port is working ${PORT}`));
 // Configure the app (app.set)
 // module.exports = new Collection(Artist, [
 //     {
@@ -87,71 +90,66 @@ app.use(methodOverride('_method'));
 // ---export model---
 // module.exports = Artist;
 	
-// Mount middleware (app.use)
-app.use(express.urlencoded({ extended: false }));
-// app.use((req, res, next) => {    
-// 	console.log(`${req.method} ${req.originalUrl}`);    
-// 	next();
-app.use(express.static('public'))
+
 // Mount routes
 // The get method defines a route that listens for a GET request
-app.get('/', function(req, res) {
-    res.render('home.ejs');
-  });
+// app.get('/', function(req, res) {
+//     res.render('home.ejs');
+//   });
 	
 
-// home
+// // home
 // app.get('/', function(req, res) {
 //     res.send('<h1>indexPage</h1>');
 //   });
-//index art
-app.get('/artwork', function(req, res) {
-    res.render("art_index.ejs");
-  });
-  //index artists
-app.get('/artists', function(req, res) {
-    res.render('artist_index.ejs');
-  //   show route single piece of art aftert artist page
-app.get('/artwork/:artworkId', function(req, res) {
-    res.send('<h1>all art Page</h1>');
-  });
+// //index art
+// app.get('/artwork', function(req, res) {
+//     res.render("art_index.ejs");
+//   });
+//   //index artists
+// app.get('/artists', function(req, res) {
+//     res.render('artist_index.ejs');
+//   //   show route single piece of art aftert artist page
+// app.get('/artwork/:artworkId', function(req, res) {
+//     res.send('<h1>all art Page</h1>');
+//   });
 
-  });
-//single artists and info and link to his/her art index
-app.get('/artist/artistId', function(req, res) {
-    res.send('<h1>all artists Page</h1>');
-  });
-// category index
-app.get('/artwork/:categories', function(req, res) {
-    res.send('<h1>categoryPage</h1>');
-  });
-// categoryshow
-app.get('/artwork', function(req, res) {
-    res.send('<h1>indexPage</h1>');
-  });
-// artists
-app.get('/artists', function(req, res) {
-    res.send('<h1>all artist</h1>');
-  });
-// artisid
-app.get('/artistid', function(req, res) {
-    res.send('<h1>artistby id</h1>');
-  });
-// create form
-app.get('/new', function(req, res) {
-    res.render('new_art_form.ejs');
-  });
-// delete form
-app.get('/delete', function(req, res) {
-    res.send('<h1>deletePage</h1>');
-  });
-// sign up form
-app.get('/sign_up', function(req, res) {
-    res.send('<h1>sign upPage</h1>');
-  });
-  app.get('/*', function(req, res) {
-    res.redirect('/');
-  });
+//   });
+// //single artists and info and link to his/her art index
+// app.get('/artist/artistId', function(req, res) {
+//     res.send('<h1>all artists Page</h1>');
+//   });
+// // category index
+// app.get('/artwork/:categories', function(req, res) {
+//     res.send('<h1>categoryPage</h1>');
+//   });
+// // categoryshow
+// app.get('/artwork', function(req, res) {
+//     res.send('<h1>indexPage</h1>');
+//   });
+// // artists
+// app.get('/artists', function(req, res) {
+//     res.send('<h1>all artist</h1>');
+//   });
+// // artisid
+// app.get('/artistid', function(req, res) {
+//     res.send('<h1>artistby id</h1>');
+//   });
+// // create form
+// app.get('/new', function(req, res) {
+//     res.render('new_art_form.ejs');
+//   });
+// // delete form
+// app.get('/delete', function(req, res) {
+//     res.send('<h1>deletePage</h1>');
+//   });
+// // sign up form
+// app.get('/sign_up', function(req, res) {
+//     res.send('<h1>sign upPage</h1>');
+//   });
+//   app.get('/*', function(req, res) {
+//     res.redirect('/');
+//   });
 // Tell the app to listen on port 4000
 
 

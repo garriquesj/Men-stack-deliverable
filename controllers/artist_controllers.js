@@ -1,28 +1,26 @@
 // const express = require('express');
 // const router = express.Router();
 // const db = require('../models');
-// // ----coming back to make more detailed notes---
-// // i feel like this should be in models why is it here
+// // // // ----coming back to make more detailed notes---
+// // // // i feel like this should be in models why is it here
 
-// router.get("/", (req, res) => {
-//    db.find({}, (error, movie) => {
-//       if (error) {
-//         console.log(error);
-//       } 
-//       const context = {artist: artist}
-//       res.render("index.ejs", context);
-//     });
-//   });
+// // // -------model--------
+// // router.get("/", (req, res) => {
+// //    db.find({}, (error, movie) => {
+// //       if (error) {
+// //         console.log(error);
+// //       } 
+// //       const context = {artist: artist}
+// //       res.render("index.ejs", context);
+// //     });
 
-// //--- inserting all 4 data points in a delete function ---
-// //---this loads/runs the delete function which deletes the previous 4  entered -creating a fresh four b
-// db.Artist.deleteMany({}, (error, DeletedItems) => {
-//     console.log(DeletedItems);
-//     db.Artist.insertMany(
 
-// // -------model--------
-// [
-//     {
+//     db.Artist.deleteMany({}, (error, deletedArtist) => {
+//         console.log(deletedArtist);
+//         db.insertMany(
+// // // -------model--------
+//     [
+//         {
 //         name: 'EiskalterEngel18',
 //         medium: 'Digital Art',
 //         pieces: ["Van", "The ice Breaker","Liquor Store","Modern Japan" ],
@@ -69,10 +67,10 @@
 //         medium: 'Ink',
 //         pieces: ["Lighthouse", "Panda","Snake","Octopus"],
 //         images: [
-//            "https://i.imgur.com/vzcwkam.jpg",
-//            "https://i.imgur.com/qcDNyxk.jpg",
-//            "https://i.imgur.com/G124Hta.jpg",
-//            "https://i.imgur.com/oyC3QRo.jpg"
+//             "https://i.imgur.com/vzcwkam.jpg",
+//             "https://i.imgur.com/qcDNyxk.jpg",
+//             "https://i.imgur.com/G124Hta.jpg",
+//             "https://i.imgur.com/oyC3QRo.jpg"
 //             ],
 //         age: 29,
 //         email: "efg@testemail.com",
@@ -90,4 +88,4 @@
 //         )
 //         console.log(deletedArtist)
 //     }
-//     )
+//     );
