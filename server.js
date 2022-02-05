@@ -1,13 +1,13 @@
 // require node modules
-const express = require('express');
-//make the 'express app'
-const controllers = require('./controllers/index.js')
+const express = require('express');//make the 'express app'
+const controllers = require('./controllers/index.js') //access my controllers index
 const dbConnections = require('./config/db.connection.js');
-const models = require('./models/artwork_model.js');
+const models = require('./models/artwork_model.js'); //always acces to the model but why do I need this in here
 // const models_artwork = require('./models/artwork_model.js');
-const methodOverride = require('method-override');
+const methodOverride = require('method-override');//Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it.   
 const app = express();
 const router = express.Router();
+
 const PORT = 1000;
 
 
@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
-// app.use('/artwork', );
+app.use("/artwork",controllers.Artwork)
 app.listen(PORT, () => console.log(`port is working ${PORT}`));
 // Configure the app (app.set)
 // module.exports = new Collection(Artist, [
@@ -98,14 +98,14 @@ app.listen(PORT, () => console.log(`port is working ${PORT}`));
 //   });
 	
 
-// // home
-// app.get('/', function(req, res) {
-//     res.send('<h1>indexPage</h1>');
-//   });
+// home
+app.get('/', function(req, res) {
+    res.render('home.ejs');
+  });
 // //index art
-// app.get('/artwork', function(req, res) {
-//     res.render("art_index.ejs");
-//   });
+app.get('/artwork', function(req, res) {
+    res.render("art_index.ejs");
+  });
 //   //index artists
 // app.get('/artists', function(req, res) {
 //     res.render('artist_index.ejs');
@@ -150,6 +150,6 @@ app.listen(PORT, () => console.log(`port is working ${PORT}`));
 //   app.get('/*', function(req, res) {
 //     res.redirect('/');
 //   });
-// Tell the app to listen on port 4000
+
 
 

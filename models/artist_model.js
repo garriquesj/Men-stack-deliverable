@@ -100,5 +100,5 @@
 // // ---will automatically be stored in 'artist' collection. ----
 // // ---set Artist variable to = model , now i can seed my artist data and it will be formatted this way----
 // const Artist = mongoose.model("Artist", artistSchema);
-// // ---export model---
+// // // ---export model---
 // module.exports = Artist;
