@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- This is my heading now -->
+    <%- include ('./partials/head.ejs', {page: 'You messed up!'}) %>
+  
+    <!-- This is my nav bar now -->
+    <%- include ('./partials/nav.ejs') %>
+  
+    <section class="hero is-medium has-background-light">
+      <div class="hero-body">
+				<img
+          width="300px"
+          src="https://media3.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif?cid=ecf05e47o47qyk2dgckova5f8deobw6jdpsj0l6fqx90wgfp&rid=giphy.gif&ct=g"
+          alt="not found"
+        />
+        <p class="title">404 Not Found 😞</p>
+        <% if (error) { %>
+        <p><%= error.message %></p>
+        <% } %>
+      </div>
+    </section>
+    <main class="container is-max-widescreen">
+      <div class="columns p-6">
+        <div class="column">
+          <a class="button is-info" href="/artwork">Back To All Products</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

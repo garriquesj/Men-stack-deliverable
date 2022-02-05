@@ -9,5 +9,35 @@
         <h1 class="title">Art Show page</h1>
       </div>
     </section>
-  </body>
+    <div class="container is-max-widescreen p-5">
+      <article class="media">
+          <figure class="media-left">
+              <p class="image is-328x328">
+                  <img src="<%= artwork.image %>" alt="artwork img" />
+              </p>
+          </figure>
+          <div class="media-content">
+              <div class="content">
+                  <h3>Name: <%= art.title %>
+                  </h3>
+                  <small>Date: <%= art.artist %></small>
+                  <p><%= art.date %></p>
+                  <div class="field mt-5 is-grouped">
+                      <div class="control">
+                          <a class="button is-info" href="/artwork/<%= art.id %>/edit">Edit This Piece
+                          </a>
+                      </div>
+                      <p class="control">
+                      <form action="/artwork/<%= artwork.id %>?_method=DELETE" method="POST">
+                          <input class="button is-danger" type="submit" value="Delete Entry" />
+                      </form>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </article>
+  </div>
+</body>
+
 </html>
+

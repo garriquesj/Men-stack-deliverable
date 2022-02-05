@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
     <!-- This is my heading now -->
-    <%- include ('./partials/head.ejs', ) %>
+<%- include ('./partials/head.ejs', ) %>
   <!-- This is my nav bar now -->
-  <%- include ('./partials/nav.ejs') %>
+ <%- include ('./partials/nav.ejs') %>
     <section class="hero is-medium has-background-light">
       <div class="hero-body">
         <h1 class="title">New Art Form</h1>
       </div>
     </section>
-    <form>
+    <form action="/artwork" method = "POST">
         <div class="container ">
             <div class= "box is-info is-outlined">
                 <div class = "field">
