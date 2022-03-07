@@ -7,5 +7,20 @@
     "mongo": "^0.1.0",
     "mongoose": "^6.1.8",
     "nodemon": "^2.0.15"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "men_deliverable",
+  "description": "# Part One. Create and Read.",
+  "version": "1.0.0",
+  "main": "query.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/garriquesj/MEN_Deliverable.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

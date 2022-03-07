@@ -1,9 +1,5 @@
-const { Mongoose } = require("mongoose");
-
-const require("mongoose");
-const Schema = Mongoose.Schema;
-
-const playerSchema = new Schema({ 
+const mongoose = require('mongoose');
+const playerSchema = new mongoose.Schema({ 
     name: {type:String},
     age: {type:String},
     position: {type:String},
