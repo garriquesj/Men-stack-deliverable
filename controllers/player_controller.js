@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
       if (error) {
         console.log(error);
       }
-    const context = {players:player}
+    const context = {players: player}
       res.render('index.ejs', { players: context });
   });
 });
@@ -107,7 +107,7 @@ Car.findById(req.params.playerId, (error, updatedPlayer) => {
   if(error) console.log(error);
 
   console.log(updatedPlayer);
-  res.render('edit.ejs', { car: updatedPlayer})
+  res.render('edit.ejs', { player: updatedPlayer})
 })
 })
 router.put('/:playerId', (req, res) => {
